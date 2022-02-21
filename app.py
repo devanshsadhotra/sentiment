@@ -1,12 +1,9 @@
 
-import re
-from transformers import TFBertModel, BertConfig, BertTokenizerFast
+
+from transformers import BertConfig, BertTokenizerFast
 import tensorflow as tf
 import numpy as np
 from flask import Flask, render_template, request
-import argparse
-import sys
-import os
 
 # Name of the BERT model to use
 model_name = 'bert-base-uncased'
