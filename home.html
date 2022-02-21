@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SentimentalAnalysis</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body style="background-image: url('../static/sentiment-analysis.jpg');">
+		<div>
+			<h1 align='center'>Welcome To Sentiment Analyzer</h1>
+			<form method="POST">
+				<textarea name="input_text" placeholder="Please enter a sentence" rows="7" cols="106"  align='center'></textarea>
+				<input class="example_a" type="submit">
+			</form>
+		</div>
+		{% if prediction.input_text=='No' %}
+		<div>
+			<br><br>
+            <h3>Please Enter Valid Text</h3>
+			<br><br>
+		</div>
+		{% elif prediction.input_text %}
+		<div>
+			<h3>The Sentiment of</h3> 
+			<h3>{{ prediction.input_text }}</h3> 
+			<h3>is {{ prediction.result}} </h3>
+		</div>	
+		{% else %}
+			<br>
+        {% endif %}
+
+    </body>
+</html>
+
